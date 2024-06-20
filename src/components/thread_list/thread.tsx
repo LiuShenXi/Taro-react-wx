@@ -2,8 +2,8 @@ import Taro, { eventCenter } from '@tarojs/taro'
 import React from 'react'
 import { View, Text, Navigator, Image } from '@tarojs/components'
 
-import api from '../utils/api'
-import { timeagoInst, Thread_DETAIL_NAVIGATE } from '../utils'
+import api from '../../utils/api'
+import { timeagoInst, Thread_DETAIL_NAVIGATE } from '../../utils/utils'
 
 type threadProps = {
   title,
@@ -29,7 +29,7 @@ const Thread: React.FC<threadProps> = (props) => {
     })
   }
 
-  const time = timeagoInst.format(last_modified * 1000, 'zh')
+  // const time = timeagoInst.format(last_modified * 1000, 'zh')
   const usernameCls = `author ${not_navi ? 'bold' : ''}`
 
   return (
@@ -41,7 +41,7 @@ const Thread: React.FC<threadProps> = (props) => {
         <View className="middle">
           <View className={usernameCls}>{member.username}</View>
           <View className="replies">
-            <Text className="mr10">{time}</Text>
+            {/* <Text className="mr10">{time}</Text> */}
             <Text>评论 {replies}</Text>
           </View>
         </View>

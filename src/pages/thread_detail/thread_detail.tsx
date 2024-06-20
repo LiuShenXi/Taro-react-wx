@@ -1,12 +1,12 @@
 import Taro from '@tarojs/taro'
 import React, { FC, useEffect, useState } from 'react'
 import { View, RichText, Image } from '@tarojs/components'
-import { Thread } from '../../components/thread_list/thread'
-import { Loading } from '../../components/thread_list/loading'
+import Thread  from '../../components/thread_list/thread'
+import Loading  from '../../components/thread_list/loading'
 import api from '../../utils/api'
-import { timeagoInst, GlobalState } from '../../utils'
+import { timeagoInst, GlobalState } from '../../utils/utils'
 
-import './index.css'
+// import './index.css'
 
 type IState = {
   loading: boolean;
@@ -74,7 +74,7 @@ const ThreadDetail: FC = () => {
   const { loading, replies, content, thread } = state
 
   const replieEl = replies.map((reply, index) => {
-    const time = timeagoInst.format(reply.last_modified * 1000, 'zh')
+    // const time = timeagoInst.format(reply.last_modified * 1000, 'zh')
     return (
       <View className='reply' key={reply.id}>
         <Image src={reply.member.avatar_large} className='avatar' />
@@ -82,9 +82,9 @@ const ThreadDetail: FC = () => {
           <View className='author'>
             {reply.member.username}
           </View>
-          <View className='time'>
+          {/* <View className='time'>
             {time}
-          </View>
+          </View> */}
           <RichText nodes={reply.content} className='content' />
           <View className='floor'>
             {index + 1} 楼

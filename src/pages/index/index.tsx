@@ -1,14 +1,24 @@
 import { View, Text } from '@tarojs/components'
 import Taro, { useLoad } from '@tarojs/taro'
 import React, { useEffect, useState } from 'react'
-import { ThreadList } from '../../components/thread_list'
+import ThreadList from '../../components/thread_list'
 import api from '../../utils/api'
 import './index.less'
+
+interface threadProps {
+  title,
+  member,
+  last_modified,
+  replies,
+  node,
+  not_navi?,
+  tid?
+}
 
 export default function Index() {
 
   const [loading, setLoading] = useState(true)
-  const [threads, setThreads] = useState(true)
+  const [threads, setThreads] = useState<threadProps[]>([])
 
   useEffect(() => {
     const fn = async () => {

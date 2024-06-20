@@ -3,9 +3,24 @@ import { View, Text } from '@tarojs/components'
 import Thread from './thread'
 import Loading from './loading'
 
-import './thread.css'
+// import './thread.css'
 
-const ThreadList: React.FC = (loading, threads) => {
+interface threadProps {
+  title,
+  member,
+  last_modified,
+  replies,
+  node,
+  not_navi?,
+  tid?
+}
+
+interface ThreadListProps {
+  threads: threadProps[];
+  loading: boolean;
+}
+
+const ThreadList: React.FC<ThreadListProps> = ({ threads, loading }) => {
 
   if (loading) {
     return <Loading />
@@ -14,12 +29,12 @@ const ThreadList: React.FC = (loading, threads) => {
   const element = threads.map((thread, index) => {
     return (
       <Thread
-        key={thread.id}
+        key={thread.tid}
         node={thread.node}
         title={thread.title}
         last_modified={thread.last_modified}
         replies={thread.replies}
-        tid={thread.id}
+        tid={thread.tid}
         member={thread.member}
       />
     )
