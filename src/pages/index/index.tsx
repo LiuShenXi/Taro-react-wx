@@ -19,14 +19,11 @@ const Demo1 = () => {
     <Swiper defaultValue={1} autoPlay indicator>
       {list.map((item, index) => (
         <Swiper.Item key={item}>
-          <img
-            width="100%"
-            height="100%"
-            onClick={() => console.log(index)}
-            src={item}
-            alt=""
+          <Image 
+            src={item} 
+            style={{ width: "100%", height: '100%' }} 
+            onClick={() => console.log(index)} 
           />
-          <Image src={item} style={{ width: "100%", height: '100%' }} />
         </Swiper.Item>
       ))}
     </Swiper>
