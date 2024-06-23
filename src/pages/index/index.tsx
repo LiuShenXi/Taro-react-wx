@@ -1,51 +1,48 @@
-import { View, Text } from '@tarojs/components'
+import { View, Text, Image } from '@tarojs/components'
 import Taro, { useLoad } from '@tarojs/taro'
-import React, { useEffect, useState } from 'react'
-import ThreadList from '../../components/thread_list'
+import React, { useEffect, useState,  FC } from 'react'
+import { Tabbar } from '@nutui/nutui-react-taro'
+import { Cart, Category, Find, Home, User } from '@nutui/icons-react-taro'
 import api from '../../utils/api'
 import './index.less'
+import { Swiper } from '@nutui/nutui-react-taro'
 
-interface threadProps {
-  title,
-  member,
-  last_modified,
-  replies,
-  node,
-  not_navi?,
-  tid?
+const list = [
+  'https://storage.360buyimg.com/jdc-article/NutUItaro34.jpg',
+  'https://storage.360buyimg.com/jdc-article/NutUItaro2.jpg',
+  'https://storage.360buyimg.com/jdc-article/welcomenutui.jpg',
+  'https://storage.360buyimg.com/jdc-article/fristfabu.jpg',
+]
+
+const Demo1 = () => {
+  return (
+    <Swiper defaultValue={1} autoPlay indicator>
+      {list.map((item, index) => (
+        <Swiper.Item key={item}>
+          <img
+            width="100%"
+            height="100%"
+            onClick={() => console.log(index)}
+            src={item}
+            alt=""
+          />
+          <Image src={item} style={{ width: "100%", height: '100%' }} />
+        </Swiper.Item>
+      ))}
+    </Swiper>
+  )
 }
 
 export default function Index() {
 
-  const [loading, setLoading] = useState(true)
-  const [threads, setThreads] = useState<threadProps[]>([])
-
   useEffect(() => {
-    const fn = async () => {
-      try {
-        const res = await Taro.request({
-          url: api.getLatestTopic(),
-        })
-        this.setState({
-          threads: res.data,
-          loading: false,
-        })
-      } catch (error) {
-        Taro.showToast({
-          title: '载入远程数据错误',
-        })
-      }
-    }   
-    fn()
+
   }, [])
 
-  useLoad(() => {
-    console.log('Page loaded.')
-  })
 
   return (
     <View className='index'>
-      <ThreadList threads={threads} loading={loading} />
+      <Demo1 />
     </View>
   )
 }
