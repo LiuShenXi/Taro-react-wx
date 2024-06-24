@@ -7,12 +7,14 @@ import api from '../../utils/api'
 import './index.less'
 import { Swiper } from '@nutui/nutui-react-taro'
 
-const list = [
-  'https://storage.360buyimg.com/jdc-article/NutUItaro34.jpg',
-  'https://storage.360buyimg.com/jdc-article/NutUItaro2.jpg',
-  'https://storage.360buyimg.com/jdc-article/welcomenutui.jpg',
-  'https://storage.360buyimg.com/jdc-article/fristfabu.jpg',
-]
+import Dashboard from './components/Dashboard/index'
+
+import a from '@/public/image/a.jpg'
+import b from '@/public/image/b.jpg'
+import c from '@/public/image/c.jpg'
+import d from '@/public/image/d.jpg'
+
+const list = [d,a,b,c]
 
 const Demo1 = () => {
   return (
@@ -40,6 +42,7 @@ export default function Index() {
   return (
     <View className='index'>
       <Demo1 />
+      <Dashboard />
     </View>
   )
 }

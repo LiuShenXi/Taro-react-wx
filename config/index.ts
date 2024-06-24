@@ -3,6 +3,8 @@ import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import devConfig from './dev'
 import prodConfig from './prod'
 
+const path = require('path')
+
 // import '@nutui/nutui-react-taro/dist/style.css'
 
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
@@ -97,6 +99,9 @@ export default defineConfig(async (merge, { command, mode }) => {
           enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
         }
       }
+    },
+    alias: {
+      '@/public': path.resolve(__dirname, '..', 'src/public'),
     }
   }
   if (process.env.NODE_ENV === 'development') {

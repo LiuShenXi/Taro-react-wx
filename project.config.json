@@ -1,6 +1,6 @@
 {
   "miniprogramRoot": "dist/",
-  "projectname": "helloWorld",
+  "projectname": "Taro-react-wx",
   "description": "第一个 Taro 项目",
   "appid": "wx4b944e032938c50c",
   "setting": {
@@ -42,7 +42,6 @@
     "ignoreUploadUnusedFiles": true
   },
   "compileType": "miniprogram",
-  "condition": {},
   "libVersion": "3.4.7",
   "srcMiniprogramRoot": "dist/",
   "packOptions": {
@@ -52,5 +51,6 @@
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
-  }
+  },
+  "condition": {}
 }
