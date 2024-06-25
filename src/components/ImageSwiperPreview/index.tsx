@@ -53,7 +53,7 @@ const ImageSwiperPreview: FC<ImageSwiperPreviewProps> = (props) => {
       <Swiper 
         defaultValue={currentIndex} 
         indicator
-        height={'1000rpx'}
+        height={'375px'}
         // width={375}
         // onChange={(val) => setCurrentIndex(val - 1)}
       >
@@ -64,7 +64,7 @@ const ImageSwiperPreview: FC<ImageSwiperPreviewProps> = (props) => {
             onClick={() => setShowPreview(true)}
             src={item.src}
             width={'100%'}
-            height={'1000rpx'}
+            height={'375px'}
           />
         </Swiper.Item>
       ))}
