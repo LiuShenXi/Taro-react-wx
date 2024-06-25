@@ -1,0 +1,92 @@
+.sku-item {
+  height: 276px;
+  display: flex;
+  flex-direction: row;
+  // align-items: center;
+  padding: 20px 20px;
+  padding-bottom: 0;
+  border-bottom: 1px solid #eaeaea;
+
+  .image-section {
+    position: relative;
+
+    .product-image {
+      width: 200px;
+      height: 200px;
+      margin-top: 38px;
+      border-radius: 5px;
+    }
+
+    .promo-tagline {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: red;
+      color: white;
+      padding: 2px 4px;
+      font-size: 12px;
+    }
+  }
+
+  .info-section {
+    flex: 1;
+    margin-left: 20px;
+    margin-top: 28px;
+    width: 100px;
+
+    .product-name {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .product-size {
+      font-size: 14px;
+      color: #999;
+    }
+
+    .price-section {
+      display: flex;
+      align-items: center;
+      margin-top: 60px;
+
+      .current-price {
+        font-size: 40px;
+        color: red;
+      }
+
+      .discount-rate {
+        margin-left: 10px;
+        font-size: 25px;
+        color: orange;
+      }
+
+      .original-price {
+        margin-left: 10px;
+        font-size: 32px;
+        color: #999;
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  .btn-wp {
+    padding-top: 50px;
+    .sales {
+      font-size: 24px;
+      color: #999;
+      // margin-left: 30px;
+      // margin-bottom: 120px;
+      // margin: 5px 0;
+    }
+  
+    .purchase-button {
+      width: 128px;
+      height: 72px;
+      margin-top: 80px;
+      font-size: 34px;
+      // margin-left: -10px;
+    }
+  }
+
+  
+}

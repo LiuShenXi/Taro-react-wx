@@ -7,6 +7,7 @@ export default defineAppConfig({
     'pages/orders/orders', // 订单
     'pages/favorites/favorites', // 收藏
     'pages/coupons/coupons', // 优惠券
+    'pages/skuDetails/index', // 商品详情
   ],
   tabBar: {
     list: [

@@ -23,7 +23,10 @@ const dashboardItems: DashboardItem[] = [
 
 const Dashboard: React.FC = () => {
   const handleClick = (item: DashboardItem) => {
-    if (item.label === '购物车') Taro.switchTab({ url: item.link }); // 跳转到 tabbar 需要使用 switchTab
+    if (item.label === '购物车') {
+      Taro.switchTab({ url: item.link });
+      return
+    } // 跳转到 tabbar 需要使用 switchTab
     Taro.navigateTo({ url: item.link });    
   };
 
