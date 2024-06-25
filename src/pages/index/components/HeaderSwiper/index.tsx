@@ -36,12 +36,12 @@ const HeaderSwiper: React.FC = () => {
   }, []);
 
   return (
-    <Swiper defaultValue={1} autoPlay indicator>
+    <Swiper defaultValue={1} autoPlay indicator height='200px'>
       {list.map((item, index) => (
         <Swiper.Item key={index}>
           <Image 
             src={item} 
-            style={{ width: "100%", height: '100%' }} 
+            style={{ width: "100%", height: '200px' }} 
             onClick={() => console.log(index)} 
           />
         </Swiper.Item>
