@@ -1,5 +1,5 @@
 import { FC, useEffect, useState, useRef } from 'react'
-import { View, Image } from '@tarojs/components'
+import { View, Image, Text } from '@tarojs/components'
 import { ImagePreview, Cell, Swiper } from '@nutui/nutui-react-taro'
 
 const imgList = [
@@ -82,7 +82,7 @@ const ImageSwiperPreview: FC<ImageSwiperPreviewProps> = (props) => {
         onClose={() => {
           setShowPreview(false)
         }}
-      />
+      />     
     </View>
   )
 }
