@@ -2,6 +2,8 @@ import { FC, useEffect, useState } from 'react'
 import Taro, { getCurrentInstance } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components';
 import ImageSwiperPreview from '@/components/ImageSwiperPreview/index'
+import BottomTabbar from './components/BottomTabbar/index'
+import SkuDetailsContent from './components/SkuDetailsContent/index'
 
 import './index.less'
 
@@ -24,14 +26,20 @@ const skuDetails: FC = () => {
   }, [])
 
   return (
-    <View>
+    <View style={{ backgroundColor: '#fff' }}>
       {/* <Text>{skuId}</Text> */}
+      {/* 预览轮播图 */}
       <ImageSwiperPreview skuId={skuId} />
+      {/* 商品基本信息 */}
       <View className="product-details">
         <View className="product-name">{productName}</View>
         <View className="product-description">{productDescription}</View>
         <Text className="product-price">¥ {currentPrice.toFixed(2)}</Text>
       </View>
+      {/* 商品详情 */}
+      <SkuDetailsContent />
+      {/* 底部操作栏 */}
+      <BottomTabbar />
     </View>
   )
 }

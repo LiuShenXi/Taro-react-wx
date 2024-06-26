@@ -4,6 +4,8 @@ import { Provider } from 'react-redux'
 import store from './store'
 
 import '@nutui/nutui-react-taro/dist/style.css'
+import '@antmjs/vantui/lib/index.less'
+
 import './app.less'
 
 function App({ children }: PropsWithChildren<any>) {
