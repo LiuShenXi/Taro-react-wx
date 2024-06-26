@@ -26,7 +26,7 @@ const skuDetails: FC = () => {
   }, [])
 
   return (
-    <View style={{ backgroundColor: '#fff' }}>
+    <View style={{ backgroundColor: '#fff' }} className='details-root'>
       {/* <Text>{skuId}</Text> */}
       {/* 预览轮播图 */}
       <ImageSwiperPreview skuId={skuId} />
