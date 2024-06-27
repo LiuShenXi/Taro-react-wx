@@ -41,7 +41,7 @@ const BottomTabbar: FC = () => {
   }
 
   const toCar = () => {
-    Taro.switchTab({ url: '/pages/car/car' });
+    Taro.switchTab({ url: '/pages/car/index' });
   }
 
   useEffect(() => {}, []);

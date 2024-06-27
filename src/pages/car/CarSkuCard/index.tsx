@@ -1,21 +1,18 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { Card } from "@antmjs/vantui";
-import { View, Text } from "@tarojs/components";
-// import { Cell, Checkbox } from "@nutui/nutui-react-taro";
-import { Checkbox, CheckboxGroup, Divider, Stepper } from "@antmjs/vantui";
+import { View } from "@tarojs/components";
+import { Checkbox, Divider, Stepper } from "@antmjs/vantui";
 
 import "./index.less";
 
-const num = 2;
-
-const CarSkuCard: React.FC = () => {
+// 接受 props
+const CarSkuCard: React.FC<{ skuInfo: { num: number, title: string, desc: string, price: string } }> = ({ skuInfo }) => {
   const [value, setValue] = useState(false);
 
   const renderNum = () => {
     return (
       <View className="num-block">
-        <Text className="nums">数量：{num}</Text>
-        <Stepper></Stepper>
+        <Stepper value={skuInfo.num}></Stepper>
       </View>
     );
   };
@@ -33,10 +30,9 @@ const CarSkuCard: React.FC = () => {
         </View>
         <Card
           className="card"
-          // num="2"
-          price="2.00"
-          desc="描述信息"
-          title="商品标题"
+          price={skuInfo.price}
+          desc={skuInfo.desc}
+          title={skuInfo.title}
           thumb="https://img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg"
           renderNum={renderNum()}
         />

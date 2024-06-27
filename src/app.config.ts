@@ -2,7 +2,7 @@ export default defineAppConfig({
   pages: [
     'pages/index/index', // 首页
     'pages/category/category', // 分类
-    'pages/car/car', // 购物车
+    'pages/car/index', // 购物车
     'pages/user/user', // 我的
     'pages/orders/orders', // 订单
     'pages/favorites/favorites', // 收藏
@@ -26,7 +26,7 @@ export default defineAppConfig({
       {
         iconPath: 'public/icon/shangpinguanli.png',
         selectedIconPath: 'public/icon/shangpinguanli.png',
-        pagePath: 'pages/car/car',
+        pagePath: 'pages/car/index',
         text: '购物车',
       },
       {

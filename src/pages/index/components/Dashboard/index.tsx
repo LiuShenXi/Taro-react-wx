@@ -15,7 +15,7 @@ interface DashboardItem {
 }
 
 const dashboardItems: DashboardItem[] = [
-  { icon: gouwuche, label: '购物车', link: '/pages/car/car' },
+  { icon: gouwuche, label: '购物车', link: '/pages/car/index' },
   { icon: youhuiquan, label: '优惠券', link: '/pages/coupons/coupons' },
   { icon: dingdan, label: '我的订单', link: '/pages/orders/orders' },
   { icon: shoucang, label: '我的收藏', link: '/pages/favorites/favorites' },
