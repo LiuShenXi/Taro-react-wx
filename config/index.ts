@@ -42,7 +42,11 @@ export default defineConfig(async (merge, { command, mode }) => {
         pxtransform: {
           enable: true,
           config: {
-
+            // selectorBlackList: ['nut-']
+            designWidth (input) {
+              const isNutUi = input.file.replace(/\\+/g, '/').indexOf('@nutui/nutui-taro') > -1
+              return isNutUi ? 375 : 750
+            }
           }
         },
         url: {
