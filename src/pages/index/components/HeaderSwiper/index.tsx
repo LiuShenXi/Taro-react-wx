@@ -3,10 +3,9 @@ import { Swiper } from '@nutui/nutui-react-taro'
 import { Image } from '@tarojs/components'
 import Taro from '@tarojs/taro';
 
-import localImageA from '@/public/image/a.jpg';
-import localImageB from '@/public/image/b.jpg';
-import localImageC from '@/public/image/c.jpg';
-import localImageD from '@/public/image/d.jpg';
+import config from '@/config/index'
+
+const { CDN_URL } =config
 
 const fetchRemoteImageList = async () => {
   return Taro.request({
@@ -15,7 +14,7 @@ const fetchRemoteImageList = async () => {
   }).then(response => response.data);
 };
 
-const localImages = [localImageA, localImageB, localImageC, localImageD];
+const localImages = [CDN_URL('a.jpg'), CDN_URL('b.jpg'), CDN_URL('c.jpg'), CDN_URL('d.jpg')];
 
 const HeaderSwiper: React.FC = () => {
   const [list, setList] = useState<string[]>(localImages);

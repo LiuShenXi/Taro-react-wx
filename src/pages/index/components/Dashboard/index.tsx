@@ -1,12 +1,17 @@
 import React from 'react';
 import { View, Image, Text } from '@tarojs/components';
 import Taro from '@tarojs/taro';
+
+import config from '@/config/index'
+
 import './index.less';
 
-import gouwuche from '@/public/icon/gouwuche.png'
-import youhuiquan from '@/public/icon/youhuiquan.png'
-import dingdan from '@/public/icon/dingdan.png'
-import shoucang from '@/public/icon/shoucang.png'
+const { CDN_URL } =config
+
+const dingdan = CDN_URL('dingdan.png')
+const gouwuche = CDN_URL('gouwuche.png')
+const youhuiquan = CDN_URL('youhuiquan.png')
+const shoucang = CDN_URL('shoucang.png')
 
 interface DashboardItem {
   icon: string;
