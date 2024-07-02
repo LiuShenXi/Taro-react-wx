@@ -3,9 +3,11 @@ import { View } from "@tarojs/components";
 
 const Coupons: React.FC = () => {
 
-  return (<View>
-    优惠券
-  </View>)
+  return (
+    <View>
+      优惠券
+    </View>
+  )
 };
 
 export default Coupons;
